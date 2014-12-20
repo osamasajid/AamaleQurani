@@ -1,0 +1,274 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page31</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,31,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load31();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_31{left:89px;top:43px;}
+#t2_31{left:129px;top:59px;}
+#t3_31{left:92px;top:75px;}
+#t4_31{left:106px;top:91px;}
+#t5_31{left:75px;top:107px;}
+#t6_31{left:396px;top:123px;}
+#t7_31{left:92px;top:236px;}
+#t8_31{left:33px;top:252px;}
+#t9_31{left:89px;top:268px;}
+#ta_31{left:390px;top:284px;}
+#tb_31{left:96px;top:400px;}
+#tc_31{left:71px;top:416px;}
+#td_31{left:111px;top:432px;}
+#te_31{left:358px;top:448px;}
+#tf_31{left:134px;top:565px;}
+#tg_31{left:84px;top:581px;}
+
+.s1_31{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali31;
+	color: rgb(31,26,23);
+}
+
+.s2_31{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic31;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali31;
+	src :url("31/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic31;
+	src :url("31/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_31" class="t s1_31">And no moving (living) creature is there on earth </div>
+<div id="t2_31" class="t s1_31">but its provision is due from Allah. </div>
+<div id="t3_31" class="t s1_31">And He knows its dwelling place and its deposit </div>
+<div id="t4_31" class="t s1_31">(in the uterus, grave). All is in a Clear Book </div>
+<div id="t5_31" class="t s1_31">(Al-Lauh Al-Mahfuz - the Book of Decrees with Allah).</div>
+<div id="t6_31" class="t s2_31">Hud 6</div>
+<div id="t7_31" class="t s1_31">“I put my trust in Allah, my Lord and your Lord! </div>
+<div id="t8_31" class="t s1_31">There is not a moving (living) creature but He has grasp of its forelock. </div>
+<div id="t9_31" class="t s1_31">Verily, my Lord is on the Straight Path (the truth).</div>
+<div id="ta_31" class="t s2_31">Hud 56</div>
+<div id="tb_31" class="t s1_31">And so many a moving (living) creature carries </div>
+<div id="tc_31" class="t s1_31">not its own provision! Allah provides for it and for you. </div>
+<div id="td_31" class="t s1_31">And He is the All-Hearer, the All-Knower.</div>
+<div id="te_31" class="t s2_31">Al-’Ankabut 60</div>
+<div id="tf_31" class="t s1_31">Whatever of mercy (i.e. of good), </div>
+<div id="tg_31" class="t s1_31">Allah may grant to mankind, none can withhold it; </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg31Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg31"><object width="455" height="641" data="31/31.svg" type="image/svg+xml" id="pdf31" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f31 = [['t1_31',1109],['t2_31',787],['t3_31',1086],['t4_31',974],['t5_31',1217],['t6_31',113],['t7_31',1083],['t8_31',1550],['t9_31',1108],['ta_31',136],['tb_31',1054],['tc_31',1254],['td_31',927],['te_31',267],['tf_31',746],['tg_31',1146]];
+function load31(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f31);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 17;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_31");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

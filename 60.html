@@ -1,0 +1,346 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page60</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,60,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load60();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_60{left:50px;top:43px;}
+#t2_60{left:75px;top:60px;}
+#t3_60{left:53px;top:76px;}
+#t4_60{left:87px;top:92px;}
+#t5_60{left:80px;top:108px;}
+#t6_60{left:372px;top:124px;}
+#t7_60{left:30px;top:155px;}
+#t8_60{left:110px;top:155px;}
+#t9_60{left:30px;top:172px;}
+#ta_60{left:75px;top:172px;}
+#tb_60{left:195px;top:172px;}
+#tc_60{left:227px;top:172px;}
+#td_60{left:30px;top:189px;}
+#te_60{left:91px;top:189px;}
+#tf_60{left:30px;top:226px;}
+#tg_60{left:30px;top:262px;}
+#th_60{left:111px;top:262px;}
+#ti_60{left:151px;top:262px;}
+#tj_60{left:236px;top:262px;}
+#tk_60{left:30px;top:279px;}
+#tl_60{left:296px;top:279px;}
+#tm_60{left:357px;top:279px;}
+#tn_60{left:30px;top:315px;}
+#to_60{left:30px;top:354px;letter-spacing:1px;}
+#tp_60{left:30px;top:438px;}
+#tq_60{left:111px;top:438px;}
+#tr_60{left:30px;top:455px;}
+#ts_60{left:30px;top:473px;}
+#tt_60{left:238px;top:473px;}
+#tu_60{left:322px;top:473px;}
+#tv_60{left:30px;top:490px;}
+#tw_60{left:30px;top:526px;}
+#tx_60{left:30px;top:563px;}
+#ty_60{left:110px;top:563px;}
+#tz_60{left:30px;top:580px;}
+
+.s1_60{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali60;
+	color: rgb(31,26,23);
+}
+
+.s6_60{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold60;
+	color: rgb(31,26,23);
+}
+
+.s5_60{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic60;
+	color: rgb(31,26,23);
+}
+
+.s4_60{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT60;
+	color: rgb(31,26,23);
+}
+
+.s3_60{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold60;
+	color: rgb(31,26,23);
+}
+
+.s2_60{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic60;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali60;
+	src :url("60/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic60;
+	src :url("60/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: XHGGEO-ZapfHumnstBT-Bold60;
+	src :url("60/fonts/XHGGEO-ZapfHumnstBT-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT60;
+	src :url("60/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_60" class="t s1_60">And what will explain to you know what the Night of Power if?</div>
+<div id="t2_60" class="t s1_60">The Night of Power is better than a thousand months.</div>
+<div id="t3_60" class="t s1_60">The angels and the (Holy) Spirit (Gabriel) descend in it by the </div>
+<div id="t4_60" class="t s1_60">Command of their Lord for every affair (of good). </div>
+<div id="t5_60" class="t s1_60">It is all (peace and) security till the rise of the dawn. </div>
+<div id="t6_60" class="t s2_60">Al Qadr 1,5</div>
+<div id="t7_60" class="t s3_60">Significance: </div>
+<div id="t8_60" class="t s4_60">Anyone who gazes towards the sky while in the state of </div>
+<div id="t9_60" class="t s5_60">Wudhu</div>
+<div id="ta_60" class="t s4_60">and reads the above </div>
+<div id="tb_60" class="t s5_60">Surah</div>
+<div id="tc_60" class="t s4_60">, his eyesight will never weaken — </div>
+<div id="td_60" class="t s5_60">Insha Allah</div>
+<div id="te_60" class="t s4_60">.</div>
+<div id="tf_60" class="t s6_60">PAIN IN THE KIDNEY</div>
+<div id="tg_60" class="t s3_60">Significance: </div>
+<div id="th_60" class="t s4_60">Recite </div>
+<div id="ti_60" class="t s5_60">Surah Quraish</div>
+<div id="tj_60" class="t s4_60">(30th Juz) and blow on any food </div>
+<div id="tk_60" class="t s4_60">before consuming it. The pain will disappear — </div>
+<div id="tl_60" class="t s5_60">Insha Allah</div>
+<div id="tm_60" class="t s4_60">.</div>
+<div id="tn_60" class="t s6_60">EPILEPSY</div>
+<div id="to_60" class="t s6_60">A.</div>
+<div id="tp_60" class="t s3_60">Significance: </div>
+<div id="tq_60" class="t s4_60">It is reported of a certain sage that his domestic servant </div>
+<div id="tr_60" class="t s4_60">had continuous bouts of epileptic fits. On one such occasion he </div>
+<div id="ts_60" class="t s4_60">recited the above words of the </div>
+<div id="tt_60" class="t s5_60">Holy Qur’an</div>
+<div id="tu_60" class="t s4_60">in her ears. She </div>
+<div id="tv_60" class="t s4_60">immediately came to and never had the attack all her life.</div>
+<div id="tw_60" class="t s6_60">B. Surah Ash-Shams</div>
+<div id="tx_60" class="t s3_60">Significance: </div>
+<div id="ty_60" class="t s4_60">Reciting Surah Ash-Shams (30th Juz) in the patient’s ear </div>
+<div id="tz_60" class="t s4_60">is believed to be very beneficial for epilepsy.</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg60Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg60"><object width="455" height="641" data="60/60.svg" type="image/svg+xml" id="pdf60" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f60 = [['t1_60',1420],['t2_60',1217],['t3_60',1393],['t4_60',1119],['t5_60',1180],['t6_60',209],['t8_60',1256],['ta_60',464],['tc_60',789],['td_60',243],['tf_60',554],['ti_60',325],['tj_60',752],['tk_60',1054],['tl_60',243],['tq_60',1255],['tr_60',1576],['ts_60',796],['tt_60',303],['tu_60',410],['tv_60',1274],['tw_60',541],['ty_60',1257],['tz_60',977]];
+function load60(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f60);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 36;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_60");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

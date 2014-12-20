@@ -1,0 +1,354 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page9</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,9,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load9();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_9{left:30px;top:43px;}
+#t2_9{left:48px;top:115px;}
+#t3_9{left:46px;top:131px;}
+#t4_9{left:384px;top:147px;}
+#t5_9{left:30px;top:173px;}
+#t6_9{left:110px;top:173px;}
+#t7_9{left:30px;top:190px;}
+#t8_9{left:67px;top:190px;}
+#t9_9{left:30px;top:224px;}
+#ta_9{left:105px;top:224px;}
+#tb_9{left:152px;top:224px;}
+#tc_9{left:30px;top:256px;}
+#td_9{left:30px;top:289px;}
+#te_9{left:112px;top:289px;}
+#tf_9{left:213px;top:289px;}
+#tg_9{left:297px;top:289px;}
+#th_9{left:30px;top:306px;}
+#ti_9{left:198px;top:306px;}
+#tj_9{left:230px;top:306px;}
+#tk_9{left:30px;top:323px;}
+#tl_9{left:227px;top:323px;}
+#tm_9{left:265px;top:323px;}
+#tn_9{left:30px;top:340px;}
+#to_9{left:142px;top:340px;}
+#tp_9{left:177px;top:340px;}
+#tq_9{left:190px;top:340px;}
+#tr_9{left:223px;top:340px;}
+#ts_9{left:30px;top:376px;}
+#tt_9{left:80px;top:489px;}
+#tu_9{left:84px;top:505px;}
+#tv_9{left:246px;top:505px;}
+#tw_9{left:148px;top:521px;}
+#tx_9{left:340px;top:537px;}
+#ty_9{left:30px;top:563px;}
+#tz_9{left:110px;top:563px;}
+#t10_9{left:30px;top:580px;}
+
+.s1_9{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold9;
+	color: rgb(31,26,23);
+}
+
+.s6_9{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic9;
+	color: rgb(31,26,23);
+}
+
+.s7_9{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItalic9;
+	color: rgb(31,26,23);
+}
+
+.s5_9{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT9;
+	color: rgb(31,26,23);
+}
+
+.s4_9{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold9;
+	color: rgb(31,26,23);
+}
+
+.s3_9{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic9;
+	color: rgb(31,26,23);
+}
+
+.s2_9{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItalic9;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItalic9;
+	src :url("09/fonts/RUPAOU-ZapfHumnstBT-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic9;
+	src :url("09/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: XHGGEO-ZapfHumnstBT-Bold9;
+	src :url("09/fonts/XHGGEO-ZapfHumnstBT-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT9;
+	src :url("09/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_9" class="t s1_9">STEADFASTNESS OF THE HEART</div>
+<div id="t2_9" class="t s2_9">Be firm (upon the Right Path) just as You had been commanded </div>
+<div id="t3_9" class="t s2_9">and those who had repented with You, (had been commanded).</div>
+<div id="t4_9" class="t s3_9">Hud 112</div>
+<div id="t5_9" class="t s4_9">Significance:</div>
+<div id="t6_9" class="t s5_9">For steadfastness of the heart, recite 11 times after every </div>
+<div id="t7_9" class="t s6_9">Salaah</div>
+<div id="t8_9" class="t s5_9">.</div>
+<div id="t9_9" class="t s1_9">CREATING </div>
+<div id="ta_9" class="t s7_9">NOOR</div>
+<div id="tb_9" class="t s1_9">IN THE HEART</div>
+<div id="tc_9" class="t s1_9">A. SURAH AL KAHF </div>
+<div id="td_9" class="t s4_9">Significance: </div>
+<div id="te_9" class="t s5_9">Whoever recites </div>
+<div id="tf_9" class="t s6_9">Surah Al Kahf</div>
+<div id="tg_9" class="t s5_9">once every Friday, his </div>
+<div id="th_9" class="t s5_9">heart will remain filled with </div>
+<div id="ti_9" class="t s6_9">noor</div>
+<div id="tj_9" class="t s5_9">till the following Friday. Whoever </div>
+<div id="tk_9" class="t s5_9">recites the first 10 verses of this </div>
+<div id="tl_9" class="t s6_9">Surah</div>
+<div id="tm_9" class="t s5_9">every day, he will be safe-</div>
+<div id="tn_9" class="t s5_9">guarded against the </div>
+<div id="to_9" class="t s6_9">fitnah</div>
+<div id="tp_9" class="t s5_9">of </div>
+<div id="tq_9" class="t s6_9">Dajjal</div>
+<div id="tr_9" class="t s5_9">.</div>
+<div id="ts_9" class="t s1_9">REMOVING SUSPICION AND DOUBT</div>
+<div id="tt_9" class="t s2_9">My Lord! I seek your protection from the prompting </div>
+<div id="tu_9" class="t s2_9">of the Devils; and my Lord! </div>
+<div id="tv_9" class="t s2_9">I seek your protection </div>
+<div id="tw_9" class="t s2_9">from them approaching me. </div>
+<div id="tx_9" class="t s3_9">Al Muminun 97,98</div>
+<div id="ty_9" class="t s4_9">Significance:</div>
+<div id="tz_9" class="t s5_9">The excessive recitation of the above verses removes all </div>
+<div id="t10_9" class="t s5_9">suspicion and doubt.</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg9Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg9"><object width="455" height="641" data="09/9.svg" type="image/svg+xml" id="pdf9" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f9 = [['t1_9',861],['t2_9',1437],['t3_9',1449],['t4_9',160],['t6_9',1258],['tb_9',385],['tc_9',518],['te_9',381],['tf_9',315],['tg_9',510],['th_9',651],['tj_9',779],['tk_9',765],['tm_9',635],['tn_9',438],['ts_9',1012],['tt_9',1180],['tu_9',618],['tv_9',498],['tw_9',638],['tx_9',336],['tz_9',1257],['t10_9',470]];
+function load9(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f9);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 37;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_9");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page20</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,20,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load20();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_20{left:30px;top:44px;}
+#t2_20{left:112px;top:44px;}
+#t3_20{left:216px;top:44px;}
+#t4_20{left:247px;top:44px;}
+#t5_20{left:384px;top:44px;}
+#t6_20{left:421px;top:44px;}
+#t7_20{left:30px;top:61px;}
+#t8_20{left:295px;top:61px;}
+#t9_20{left:30px;top:96px;}
+#ta_20{left:112px;top:157px;}
+#tb_20{left:30px;top:189px;}
+#tc_20{left:122px;top:189px;}
+#td_20{left:30px;top:206px;}
+#te_20{left:30px;top:223px;}
+#tf_20{left:153px;top:223px;}
+#tg_20{left:167px;top:223px;}
+#th_20{left:394px;top:223px;}
+#ti_20{left:30px;top:240px;}
+#tj_20{left:59px;top:240px;}
+#tk_20{left:30px;top:274px;}
+#tl_20{left:30px;top:310px;letter-spacing:1px;}
+#tm_20{left:90px;top:402px;}
+#tn_20{left:68px;top:418px;}
+#to_20{left:119px;top:434px;}
+#tp_20{left:383px;top:450px;}
+#tq_20{left:30px;top:480px;}
+#tr_20{left:110px;top:480px;}
+#ts_20{left:30px;top:497px;}
+#tt_20{left:30px;top:533px;}
+
+.s1_20{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold20;
+	color: rgb(31,26,23);
+}
+
+.s7_20{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic20;
+	color: rgb(31,26,23);
+}
+
+.s3_20{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic20;
+	color: rgb(31,26,23);
+}
+
+.s6_20{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: HNWKEU-AGAArabesque20;
+	color: rgb(31,26,23);
+}
+
+.s5_20{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali20;
+	color: rgb(31,26,23);
+}
+
+.s2_20{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT20;
+	color: rgb(31,26,23);
+}
+
+.s4_20{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold20;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: HNWKEU-AGAArabesque20;
+	src :url("20/fonts/HNWKEU-AGAArabesque.woff") format("woff");
+}
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali20;
+	src :url("20/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic20;
+	src :url("20/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: XHGGEO-ZapfHumnstBT-Bold20;
+	src :url("20/fonts/XHGGEO-ZapfHumnstBT-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT20;
+	src :url("20/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_20" class="t s1_20">Significance: </div>
+<div id="t2_20" class="t s2_20">Recite the above </div>
+<div id="t3_20" class="t s3_20">ayah</div>
+<div id="t4_20" class="t s2_20">three times after every </div>
+<div id="t5_20" class="t s3_20">Salaah</div>
+<div id="t6_20" class="t s2_20">. </div>
+<div id="t7_20" class="t s2_20">Good and righteous children will be granted — </div>
+<div id="t8_20" class="t s3_20">Insha Allah.</div>
+<div id="t9_20" class="t s4_20">STERILITY</div>
+<div id="ta_20" class="t s5_20">The Shaper out of naught, The Fashioner.</div>
+<div id="tb_20" class="t s1_20">Significance: </div>
+<div id="tc_20" class="t s2_20">If a barren woman fasts for seven days and after </div>
+<div id="td_20" class="t s2_20">breaking her fast with water, (she should eat food thereafter) reads the </div>
+<div id="te_20" class="t s2_20">above Name of Allah </div>
+<div id="tf_20" class="t s6_20">I</div>
+<div id="tg_20" class="t s2_20">21 times then she will soon conceive — </div>
+<div id="th_20" class="t s3_20">Insha </div>
+<div id="ti_20" class="t s3_20">Allah</div>
+<div id="tj_20" class="t s2_20">. </div>
+<div id="tk_20" class="t s4_20">MISCARRIAGE</div>
+<div id="tl_20" class="t s4_20">A.</div>
+<div id="tm_20" class="t s5_20">Allah knowns that which every female bears and </div>
+<div id="tn_20" class="t s5_20">that which the wombs absorb and that which they grow. </div>
+<div id="to_20" class="t s5_20">And everything with Him is measured. </div>
+<div id="tp_20" class="t s7_20">Ar Ra’d 8</div>
+<div id="tq_20" class="t s1_20">Significance: </div>
+<div id="tr_20" class="t s2_20">If there is fear of miscarriage the above verse should be </div>
+<div id="ts_20" class="t s2_20">recited.</div>
+<div id="tt_20" class="t s4_20">LABOUR PAINS</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg20Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg20"><object width="455" height="641" data="20/20.svg" type="image/svg+xml" id="pdf20" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f20 = [['t2_20',395],['t4_20',528],['t7_20',1047],['t8_20',258],['ta_20',926],['tc_20',1208],['td_20',1576],['te_20',477],['tg_20',896],['tm_20',1099],['tn_20',1278],['to_20',869],['tp_20',165],['tr_20',1256],['tt_20',410]];
+function load20(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f20);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 30;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_20");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

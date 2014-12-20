@@ -1,0 +1,453 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page2</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,2,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load2();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_2{left:30px;top:44px;}
+#t2_2{left:68px;top:44px;}
+#t3_2{left:114px;top:44px;}
+#t4_2{left:408px;top:44px;}
+#t5_2{left:30px;top:125px;}
+#t6_2{left:68px;top:125px;}
+#t7_2{left:257px;top:125px;}
+#t8_2{left:408px;top:125px;}
+#t9_2{left:30px;top:64px;}
+#ta_2{left:68px;top:64px;}
+#tb_2{left:141px;top:64px;}
+#tc_2{left:408px;top:64px;}
+#td_2{left:30px;top:84px;}
+#te_2{left:68px;top:84px;}
+#tf_2{left:148px;top:84px;}
+#tg_2{left:408px;top:84px;}
+#th_2{left:30px;top:105px;}
+#ti_2{left:68px;top:105px;}
+#tj_2{left:333px;top:105px;}
+#tk_2{left:408px;top:105px;}
+#tl_2{left:30px;top:146px;}
+#tm_2{left:68px;top:146px;}
+#tn_2{left:205px;top:146px;}
+#to_2{left:408px;top:146px;}
+#tp_2{left:30px;top:166px;}
+#tq_2{left:68px;top:166px;}
+#tr_2{left:201px;top:166px;}
+#ts_2{left:408px;top:166px;}
+#tt_2{left:30px;top:186px;}
+#tu_2{left:68px;top:186px;}
+#tv_2{left:314px;top:186px;}
+#tw_2{left:408px;top:186px;}
+#tx_2{left:30px;top:207px;}
+#ty_2{left:68px;top:207px;}
+#tz_2{left:299px;top:207px;}
+#t10_2{left:408px;top:207px;}
+#t11_2{left:30px;top:227px;}
+#t12_2{left:68px;top:227px;}
+#t13_2{left:197px;top:227px;}
+#t14_2{left:408px;top:227px;}
+#t15_2{left:30px;top:248px;}
+#t16_2{left:68px;top:248px;}
+#t17_2{left:299px;top:248px;}
+#t18_2{left:408px;top:248px;}
+#t19_2{left:30px;top:268px;}
+#t1a_2{left:68px;top:268px;}
+#t1b_2{left:284px;top:268px;}
+#t1c_2{left:408px;top:268px;}
+#t1d_2{left:30px;top:289px;}
+#t1e_2{left:68px;top:289px;}
+#t1f_2{left:160px;top:289px;}
+#t1g_2{left:408px;top:289px;}
+#t1h_2{left:30px;top:309px;}
+#t1i_2{left:68px;top:309px;}
+#t1j_2{left:235px;top:309px;}
+#t1k_2{left:408px;top:309px;}
+#t1l_2{left:30px;top:329px;}
+#t1m_2{left:68px;top:329px;}
+#t1n_2{left:224px;top:329px;}
+#t1o_2{left:408px;top:329px;}
+#t1p_2{left:30px;top:350px;}
+#t1q_2{left:68px;top:350px;}
+#t1r_2{left:337px;top:350px;}
+#t1s_2{left:408px;top:350px;}
+#t1t_2{left:30px;top:370px;}
+#t1u_2{left:68px;top:370px;}
+#t1v_2{left:261px;top:370px;}
+#t1w_2{left:408px;top:370px;}
+#t1x_2{left:30px;top:391px;}
+#t1y_2{left:68px;top:391px;}
+#t1z_2{left:284px;top:391px;}
+#t20_2{left:408px;top:391px;}
+#t21_2{left:30px;top:411px;}
+#t22_2{left:68px;top:411px;}
+#t23_2{left:322px;top:411px;}
+#t24_2{left:408px;top:411px;}
+#t25_2{left:30px;top:432px;}
+#t26_2{left:68px;top:432px;}
+#t27_2{left:333px;top:432px;}
+#t28_2{left:408px;top:432px;}
+#t29_2{left:30px;top:452px;}
+#t2a_2{left:68px;top:452px;}
+#t2b_2{left:269px;top:452px;}
+#t2c_2{left:408px;top:452px;}
+#t2d_2{left:30px;top:472px;}
+#t2e_2{left:68px;top:472px;}
+#t2f_2{left:306px;top:472px;}
+#t2g_2{left:408px;top:472px;}
+#t2h_2{left:30px;top:493px;}
+#t2i_2{left:68px;top:493px;}
+#t2j_2{left:190px;top:493px;}
+#t2k_2{left:408px;top:493px;}
+#t2l_2{left:30px;top:513px;}
+#t2m_2{left:68px;top:513px;}
+#t2n_2{left:288px;top:513px;}
+#t2o_2{left:408px;top:513px;}
+#t2p_2{left:30px;top:534px;}
+#t2q_2{left:68px;top:534px;}
+#t2r_2{left:299px;top:534px;}
+#t2s_2{left:408px;top:534px;}
+#t2t_2{left:30px;top:554px;}
+#t2u_2{left:68px;top:554px;}
+#t2v_2{left:160px;top:554px;}
+#t2w_2{left:408px;top:554px;}
+#t2x_2{left:30px;top:574px;}
+#t2y_2{left:68px;top:574px;}
+#t2z_2{left:235px;top:574px;}
+#t30_2{left:408px;top:574px;}
+
+.s1_2{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT2;
+	color: rgb(31,26,23);
+}
+
+.s2_2{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT2;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT2;
+	src :url("02/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_2" class="t s1_2">25.</div>
+<div id="t2_2" class="t s1_2">Sterility.</div>
+<div id="t3_2" class="t s1_2">..............................................................................</div>
+<div id="t4_2" class="t s1_2">21</div>
+<div id="t5_2" class="t s1_2">29.</div>
+<div id="t6_2" class="t s1_2">Healthy Upbringing Of Children.</div>
+<div id="t7_2" class="t s1_2">........................................</div>
+<div id="t8_2" class="t s1_2">22</div>
+<div id="t9_2" class="t s2_2">26.</div>
+<div id="ta_2" class="t s2_2">Miscarriage .</div>
+<div id="tb_2" class="t s2_2">.......................................................................</div>
+<div id="tc_2" class="t s2_2">21</div>
+<div id="td_2" class="t s2_2">27.</div>
+<div id="te_2" class="t s2_2">Labour Pains .</div>
+<div id="tf_2" class="t s2_2">.....................................................................</div>
+<div id="tg_2" class="t s2_2">21</div>
+<div id="th_2" class="t s2_2">28.</div>
+<div id="ti_2" class="t s2_2">Protecting Children Against Infantile Diseases.</div>
+<div id="tj_2" class="t s2_2">....................</div>
+<div id="tk_2" class="t s2_2">22</div>
+<div id="tl_2" class="t s2_2">30.</div>
+<div id="tm_2" class="t s2_2">For Abundance In Rizq.</div>
+<div id="tn_2" class="t s2_2">......................................................</div>
+<div id="to_2" class="t s2_2">23</div>
+<div id="tp_2" class="t s2_2">31.</div>
+<div id="tq_2" class="t s2_2">Repayments Of Debts .</div>
+<div id="tr_2" class="t s2_2">.......................................................</div>
+<div id="ts_2" class="t s2_2">24</div>
+<div id="tt_2" class="t s2_2">32.</div>
+<div id="tu_2" class="t s2_2">To Please Someone Endowed With Power.</div>
+<div id="tv_2" class="t s2_2">.........................</div>
+<div id="tw_2" class="t s2_2">25</div>
+<div id="tx_2" class="t s2_2">33.</div>
+<div id="ty_2" class="t s2_2">To Halt An Oppressor From Oppressing.</div>
+<div id="tz_2" class="t s2_2">.............................</div>
+<div id="t10_2" class="t s2_2">26</div>
+<div id="t11_2" class="t s2_2">34.</div>
+<div id="t12_2" class="t s2_2">Disobedient Children.</div>
+<div id="t13_2" class="t s2_2">........................................................</div>
+<div id="t14_2" class="t s2_2">27</div>
+<div id="t15_2" class="t s2_2">35.</div>
+<div id="t16_2" class="t s2_2">For Insubordination And Disobedience .</div>
+<div id="t17_2" class="t s2_2">.............................</div>
+<div id="t18_2" class="t s2_2">27</div>
+<div id="t19_2" class="t s2_2">36.</div>
+<div id="t1a_2" class="t s2_2">Protection Against Evil Men And Jinn.</div>
+<div id="t1b_2" class="t s2_2">.................................</div>
+<div id="t1c_2" class="t s2_2">28</div>
+<div id="t1d_2" class="t s2_2">37.</div>
+<div id="t1e_2" class="t s2_2">Removing Fear.</div>
+<div id="t1f_2" class="t s2_2">..................................................................</div>
+<div id="t1g_2" class="t s2_2">29</div>
+<div id="t1h_2" class="t s2_2">38.</div>
+<div id="t1i_2" class="t s2_2">To Remove Fear And Fright .</div>
+<div id="t1j_2" class="t s2_2">..............................................</div>
+<div id="t1k_2" class="t s2_2">29</div>
+<div id="t1l_2" class="t s2_2">39.</div>
+<div id="t1m_2" class="t s2_2">Security Against All Harms.</div>
+<div id="t1n_2" class="t s2_2">.................................................</div>
+<div id="t1o_2" class="t s2_2">30</div>
+<div id="t1p_2" class="t s2_2">40.</div>
+<div id="t1q_2" class="t s2_2">Curing Someone Under The Influence Of Evil.</div>
+<div id="t1r_2" class="t s2_2">...................</div>
+<div id="t1s_2" class="t s2_2">34</div>
+<div id="t1t_2" class="t s2_2">41.</div>
+<div id="t1u_2" class="t s2_2">To Drive Out Jinn From A House.</div>
+<div id="t1v_2" class="t s2_2">.......................................</div>
+<div id="t1w_2" class="t s2_2">35</div>
+<div id="t1x_2" class="t s2_2">42.</div>
+<div id="t1y_2" class="t s2_2">Imam Auza'i (R.A.) And The Evil Jinn .</div>
+<div id="t1z_2" class="t s2_2">.................................</div>
+<div id="t20_2" class="t s2_2">36</div>
+<div id="t21_2" class="t s2_2">43.</div>
+<div id="t22_2" class="t s2_2">To Overpower One's Opponents In Debate.</div>
+<div id="t23_2" class="t s2_2">.......................</div>
+<div id="t24_2" class="t s2_2">36</div>
+<div id="t25_2" class="t s2_2">44.</div>
+<div id="t26_2" class="t s2_2">To Overcome A Foe In Any Contest Or Battle.</div>
+<div id="t27_2" class="t s2_2">....................</div>
+<div id="t28_2" class="t s2_2">37</div>
+<div id="t29_2" class="t s2_2">45.</div>
+<div id="t2a_2" class="t s2_2">Barakah In Produce, Livestock Etc.</div>
+<div id="t2b_2" class="t s2_2">.....................................</div>
+<div id="t2c_2" class="t s2_2">38</div>
+<div id="t2d_2" class="t s2_2">46.</div>
+<div id="t2e_2" class="t s2_2">Barakah In Business, Farming, Home Etc.</div>
+<div id="t2f_2" class="t s2_2">...........................</div>
+<div id="t2g_2" class="t s2_2">40</div>
+<div id="t2h_2" class="t s2_2">47.</div>
+<div id="t2i_2" class="t s2_2">To Drive Away Pests .</div>
+<div id="t2j_2" class="t s2_2">..........................................................</div>
+<div id="t2k_2" class="t s2_2">41</div>
+<div id="t2l_2" class="t s2_2">48.</div>
+<div id="t2m_2" class="t s2_2">For Barakah And Progress In Business.</div>
+<div id="t2n_2" class="t s2_2">................................</div>
+<div id="t2o_2" class="t s2_2">43</div>
+<div id="t2p_2" class="t s2_2">49.</div>
+<div id="t2q_2" class="t s2_2">For Progress And Protection In Business.</div>
+<div id="t2r_2" class="t s2_2">.............................</div>
+<div id="t2s_2" class="t s2_2">44</div>
+<div id="t2t_2" class="t s2_2">50.</div>
+<div id="t2u_2" class="t s2_2">To Keep Justice.</div>
+<div id="t2v_2" class="t s2_2">..................................................................</div>
+<div id="t2w_2" class="t s2_2">44</div>
+<div id="t2x_2" class="t s2_2">51.</div>
+<div id="t2y_2" class="t s2_2">For Lessening One's Burden .</div>
+<div id="t2z_2" class="t s2_2">..............................................</div>
+<div id="t30_2" class="t s2_2">46</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg2Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg2"><object width="455" height="641" data="02/2.svg" type="image/svg+xml" id="pdf2" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f2 = [['t6_2',758],['ta_2',291],['te_2',321],['ti_2',1060],['tm_2',547],['tq_2',532],['tu_2',984],['ty_2',924],['t12_2',517],['t16_2',924],['t1a_2',864],['t1e_2',367],['t1i_2',668],['t1m_2',623],['t1q_2',1075],['t1u_2',773],['t1y_2',864],['t22_2',1015],['t26_2',1060],['t2a_2',795],['t2e_2',947],['t2i_2',487],['t2m_2',879],['t2q_2',924],['t2u_2',367],['t2y_2',668]];
+function load2(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f2);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 109;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_2");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

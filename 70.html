@@ -1,0 +1,330 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page70</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,70,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load70();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_70{left:102px;top:142px;}
+#t2_70{left:140px;top:158px;}
+#t3_70{left:108px;top:173px;}
+#t4_70{left:149px;top:189px;}
+#t5_70{left:63px;top:205px;}
+#t6_70{left:64px;top:221px;}
+#t7_70{left:337px;top:237px;}
+#t8_70{left:30px;top:268px;}
+#t9_70{left:110px;top:268px;}
+#ta_70{left:30px;top:285px;}
+#tb_70{left:30px;top:320px;}
+#tc_70{left:30px;top:356px;}
+#td_70{left:110px;top:356px;}
+#te_70{left:298px;top:356px;}
+#tf_70{left:370px;top:356px;}
+#tg_70{left:30px;top:373px;}
+#th_70{left:30px;top:390px;}
+#ti_70{left:30px;top:426px;}
+#tj_70{left:30px;top:464px;letter-spacing:1px;}
+#tk_70{left:93px;top:502px;}
+#tl_70{left:356px;top:518px;}
+#tm_70{left:30px;top:546px;}
+#tn_70{left:112px;top:546px;}
+#to_70{left:216px;top:546px;}
+#tp_70{left:248px;top:546px;}
+#tq_70{left:30px;top:563px;}
+#tr_70{left:30px;top:580px;}
+
+.s1_70{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali70;
+	color: rgb(31,26,23);
+}
+
+.s5_70{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold70;
+	color: rgb(31,26,23);
+}
+
+.s6_70{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic70;
+	color: rgb(31,26,23);
+}
+
+.s4_70{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT70;
+	color: rgb(31,26,23);
+}
+
+.s3_70{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold70;
+	color: rgb(31,26,23);
+}
+
+.s2_70{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic70;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali70;
+	src :url("70/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic70;
+	src :url("70/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: XHGGEO-ZapfHumnstBT-Bold70;
+	src :url("70/fonts/XHGGEO-ZapfHumnstBT-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT70;
+	src :url("70/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_70" class="t s1_70">And when you have embarked on the ark — </div>
+<div id="t2_70" class="t s1_70">you and those with you — say: </div>
+<div id="t3_70" class="t s1_70">“Praise be to Allah who has saved us from </div>
+<div id="t4_70" class="t s1_70">the people who do wrong”. </div>
+<div id="t5_70" class="t s1_70">And say: “O my Lord, enable me to disembark with (Your) </div>
+<div id="t6_70" class="t s1_70">blessings for you are the best to enable us to disembark”. </div>
+<div id="t7_70" class="t s2_70">Al Mu’minun 28,29</div>
+<div id="t8_70" class="t s3_70">Significance: </div>
+<div id="t9_70" class="t s4_70">Recitation of the above affords the reciter and his family </div>
+<div id="ta_70" class="t s4_70">protection against thieves, enemies and Jinn.</div>
+<div id="tb_70" class="t s5_70">SAFEGUARDING OF MONEY AND VALUABLES</div>
+<div id="tc_70" class="t s3_70">Significance:</div>
+<div id="td_70" class="t s4_70">For safekeeping of money, recite </div>
+<div id="te_70" class="t s6_70">Surah Al-Asr</div>
+<div id="tf_70" class="t s4_70">(30th Juz) </div>
+<div id="tg_70" class="t s4_70">when banking it or putting it in a safe place or hiding it anywhere. The </div>
+<div id="th_70" class="t s4_70">same applies to valuables.</div>
+<div id="ti_70" class="t s5_70">TO FIND A LOST OBJECT</div>
+<div id="tj_70" class="t s5_70">A.</div>
+<div id="tk_70" class="t s1_70">We belong to Allah and to Him shall we return. </div>
+<div id="tl_70" class="t s2_70">Al Baqarah 156</div>
+<div id="tm_70" class="t s3_70">Significance: </div>
+<div id="tn_70" class="t s4_70">Recite the above </div>
+<div id="to_70" class="t s6_70">ayah</div>
+<div id="tp_70" class="t s4_70">and search for the lost object. </div>
+<div id="tq_70" class="t s4_70">Insha Allah it will be found. Otherwise, something better and greater in </div>
+<div id="tr_70" class="t s4_70">value will be received.</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg70Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg70"><object width="455" height="641" data="70/70.svg" type="image/svg+xml" id="pdf70" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f70 = [['t1_70',1001],['t2_70',696],['t3_70',954],['t4_70',625],['t5_70',1314],['t6_70',1304],['t7_70',348],['t9_70',1258],['ta_70',998],['tb_70',1224],['td_70',737],['te_70',275],['tf_70',219],['tg_70',1576],['th_70',580],['ti_70',661],['tk_70',1072],['tl_70',274],['tn_70',396],['tp_70',707],['tq_70',1576],['tr_70',499]];
+function load70(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f70);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 28;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_70");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

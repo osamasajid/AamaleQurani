@@ -1,0 +1,331 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page36</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,36,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load36();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_36{left:95px;top:131px;}
+#t2_36{left:74px;top:147px;}
+#t3_36{left:69px;top:163px;}
+#t4_36{left:58px;top:179px;}
+#t5_36{left:49px;top:195px;}
+#t6_36{left:68px;top:211px;}
+#t7_36{left:349px;top:227px;}
+#t8_36{left:30px;top:254px;}
+#t9_36{left:113px;top:254px;}
+#ta_36{left:30px;top:271px;}
+#tb_36{left:30px;top:303px;}
+#tc_36{left:30px;top:335px;}
+#td_36{left:40px;top:335px;}
+#te_36{left:51px;top:335px;}
+#tf_36{left:30px;top:370px;}
+#tg_36{left:114px;top:370px;}
+#th_36{left:30px;top:388px;}
+#ti_36{left:30px;top:421px;}
+#tj_36{left:30px;top:454px;}
+#tk_36{left:113px;top:454px;}
+#tl_36{left:30px;top:471px;}
+#tm_36{left:30px;top:508px;}
+#tn_36{left:141px;top:552px;}
+#to_36{left:130px;top:568px;}
+#tp_36{left:367px;top:584px;}
+
+.s1_36{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali36;
+	color: rgb(0,0,0);
+}
+
+.s6_36{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: UWJRXS-TimesNewRoman36;
+	color: rgb(0,0,0);
+}
+
+.s5_36{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold36;
+	color: rgb(0,0,0);
+}
+
+.s4_36{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT36;
+	color: rgb(0,0,0);
+}
+
+.s3_36{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold36;
+	color: rgb(0,0,0);
+}
+
+.s2_36{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic36;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali36;
+	src :url("36/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic36;
+	src :url("36/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: XHGGEO-ZapfHumnstBT-Bold36;
+	src :url("36/fonts/XHGGEO-ZapfHumnstBT-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT36;
+	src :url("36/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+@font-face {
+	font-family: UWJRXS-TimesNewRoman36;
+	src :url("36/fonts/UWJRXS-TimesNewRoman.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_36" class="t s1_36">O mankind! there assuredly has come to you a </div>
+<div id="t2_36" class="t s1_36">clear proof from your Lord and We have sent down to </div>
+<div id="t3_36" class="t s1_36">you a light manifest that guides you to the straight path. </div>
+<div id="t4_36" class="t s1_36">Verily those who believe in Allah, and hold fast to His Rope, </div>
+<div id="t5_36" class="t s1_36">very soon Allah shall cause them to enter His Mercy and Grace </div>
+<div id="t6_36" class="t s1_36">and shall guide them to a straight path towards Himself. </div>
+<div id="t7_36" class="t s2_36">An Nisa 174,175</div>
+<div id="t8_36" class="t s3_36">Significance:</div>
+<div id="t9_36" class="t s4_36">To overcome an enemy in an argument one should </div>
+<div id="ta_36" class="t s4_36">recite the above verse.</div>
+<div id="tb_36" class="t s5_36">TO OVERCOME A FOE IN ANY CONTEST OR BATTLE</div>
+<div id="tc_36" class="t s5_36">A</div>
+<div id="td_36" class="t s6_36">.</div>
+<div id="te_36" class="t s5_36">Suratul-feel</div>
+<div id="tf_36" class="t s3_36">Significance: </div>
+<div id="tg_36" class="t s4_36">Recitation of Suratul-feel will ensure victory for its </div>
+<div id="th_36" class="t s4_36">reciters when fighting the enemy.</div>
+<div id="ti_36" class="t s5_36">B. Ayatul Kursi</div>
+<div id="tj_36" class="t s3_36">Significance: </div>
+<div id="tk_36" class="t s4_36">If Ayatul Kursi is recited before a battle, victory is a </div>
+<div id="tl_36" class="t s4_36">certainty, Insha Allah.</div>
+<div id="tm_36" class="t s5_36">C.</div>
+<div id="tn_36" class="t s1_36">The hosts will be defeated and </div>
+<div id="to_36" class="t s1_36">they will turn their backs and flee. </div>
+<div id="tp_36" class="t s2_36">Al Qamar 45</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg36Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg36"><object width="455" height="641" data="36/36.svg" type="image/svg+xml" id="pdf36" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f36 = [['t1_36',1058],['t2_36',1223],['t3_36',1268],['t4_36',1357],['t5_36',1425],['t6_36',1277],['t7_36',301],['t9_36',1246],['ta_36',502],['tb_36',1382],['tg_36',1240],['th_36',739],['ti_36',398],['tk_36',1246],['tl_36',478],['tn_36',692],['to_36',776],['tp_36',229]];
+function load36(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f36);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 26;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_36");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

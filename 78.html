@@ -1,0 +1,328 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page78</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,78,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load78();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_78{left:63px;top:43px;}
+#t2_78{left:134px;top:59px;}
+#t3_78{left:401px;top:76px;}
+#t4_78{left:30px;top:104px;}
+#t5_78{left:30px;top:121px;}
+#t6_78{left:30px;top:138px;}
+#t7_78{left:30px;top:155px;}
+#t8_78{left:30px;top:172px;}
+#t9_78{left:30px;top:189px;}
+#ta_78{left:30px;top:223px;}
+#tb_78{left:30px;top:240px;}
+#tc_78{left:30px;top:257px;}
+#td_78{left:30px;top:274px;}
+#te_78{left:30px;top:291px;}
+#tf_78{left:30px;top:308px;}
+#tg_78{left:30px;top:325px;}
+#th_78{left:30px;top:342px;}
+#ti_78{left:30px;top:376px;}
+#tj_78{left:30px;top:393px;}
+#tk_78{left:30px;top:410px;}
+#tl_78{left:30px;top:427px;}
+#tm_78{left:30px;top:444px;}
+#tn_78{left:165px;top:478px;}
+#to_78{left:106px;top:500px;}
+#tp_78{left:60px;top:521px;}
+#tq_78{left:135px;top:543px;}
+#tr_78{left:304px;top:543px;}
+#ts_78{left:316px;top:543px;}
+#tt_78{left:165px;top:564px;}
+
+.s4_78{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali78;
+	color: rgb(31,26,23);
+}
+
+.s1_78{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali78;
+	color: rgb(31,26,23);
+}
+
+.s5_78{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: HNWKEU-AGAArabesque78;
+	color: rgb(31,26,23);
+}
+
+.s3_78{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT78;
+	color: rgb(31,26,23);
+}
+
+.s2_78{
+	FONT-SIZE: 36px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic78;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: HNWKEU-AGAArabesque78;
+	src :url("78/fonts/HNWKEU-AGAArabesque.woff") format("woff");
+}
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali78;
+	src :url("78/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic78;
+	src :url("78/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT78;
+	src :url("78/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_78" class="t s1_78">He only invites his Hizb (followers) that they may become </div>
+<div id="t2_78" class="t s1_78">the dwellers of the blazing Fire.”</div>
+<div id="t3_78" class="t s2_78">Fatir 6</div>
+<div id="t4_78" class="t s3_78">The second foe of man is his own lusts. Man can be persuaded to deny </div>
+<div id="t5_78" class="t s3_78">the truth and disobey the Commandments of Allah if these are </div>
+<div id="t6_78" class="t s3_78">contrary to his lusts. A sinful man always gives priority to emotions and </div>
+<div id="t7_78" class="t s3_78">passions over truth and justice. The way to overcome lust is to ask Allah </div>
+<div id="t8_78" class="t s3_78">for refuge against one’s own lusts, stick to truth, and to refrain from </div>
+<div id="t9_78" class="t s3_78">following desires contrary to Allah’s Commandments.</div>
+<div id="ta_78" class="t s3_78">This enemy of man incites him to evil. This base self incites sins and </div>
+<div id="tb_78" class="t s3_78">forbidden desires in a man such as drinking wine, committing adultery </div>
+<div id="tc_78" class="t s3_78">and breaking fast in Ramadhan without a legal excuse. The way to </div>
+<div id="td_78" class="t s3_78">overcome this enemy is to ask Allah for refuge against the baserself and </div>
+<div id="te_78" class="t s3_78">against the devil. Then, one should abstain from committing a sin and </div>
+<div id="tf_78" class="t s3_78">strive to gain the refuge of Allah. One should always remind oneself </div>
+<div id="tg_78" class="t s3_78">that sinful lusts are evanescent and leave nothing but sorrow and </div>
+<div id="th_78" class="t s3_78">remorse.</div>
+<div id="ti_78" class="t s3_78">Satanic people are the third enemy of man. They are called satanic </div>
+<div id="tj_78" class="t s3_78">people because they behave like devils, oppose the Commandments </div>
+<div id="tk_78" class="t s3_78">of Allah, commit lewdness and tempt people to evil. The best way to </div>
+<div id="tl_78" class="t s3_78">overcome this enemy is to remain beware of them and not to associate </div>
+<div id="tm_78" class="t s3_78">with them.</div>
+<div id="tn_78" class="t s4_78">******************</div>
+<div id="to_78" class="t s4_78">Above all, the primary aim and object of </div>
+<div id="tp_78" class="t s4_78">reciting the Holy Qur’an or any part of the Holy Qur’an </div>
+<div id="tq_78" class="t s4_78">should be pleasure of Allah </div>
+<div id="tr_78" class="t s5_78">I</div>
+<div id="ts_78" class="t s3_78">.</div>
+<div id="tt_78" class="t s4_78">******************</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg78Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg78"><object width="455" height="641" data="78/78.svg" type="image/svg+xml" id="pdf78" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f78 = [['t1_78',1312],['t2_78',744],['t3_78',94],['t4_78',1576],['t5_78',1576],['t6_78',1576],['t7_78',1576],['t8_78',1576],['t9_78',1194],['ta_78',1576],['tb_78',1576],['tc_78',1576],['td_78',1576],['te_78',1576],['tf_78',1576],['tg_78',1576],['ti_78',1576],['tj_78',1576],['tk_78',1576],['tl_78',1576],['tm_78',243],['to_78',972],['tp_78',1337],['tq_78',658]];
+function load78(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f78);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 30;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_78");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>

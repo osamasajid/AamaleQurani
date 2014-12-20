@@ -1,0 +1,336 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>remediesfromtheholyquran_140216045741_phpapp01 Page45</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(79,45,455,641,0,heights,'.png');
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+	
+	<div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+	
+	<div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Actual Size</option>
+		<option value="2">Fit Width</option>
+		<option value="3">Fit Height</option>
+		<option value="4">Fit Page</option>
+		<option value="5">Automatic</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 455px; height: 641px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load45();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        if (elements[i].offsetWidth < widths[i][1]) {
+            currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+            if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+            isDone[i] = false;
+        } else {
+            currentSpacing[i] = 1;//too long
+            isDone[i] = true;
+        }
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_45{left:30px;top:43px;}
+#t2_45{left:30px;top:79px;letter-spacing:1px;}
+#t3_45{left:111px;top:215px;}
+#t4_45{left:114px;top:231px;}
+#t5_45{left:80px;top:247px;}
+#t6_45{left:65px;top:263px;}
+#t7_45{left:52px;top:279px;}
+#t8_45{left:140px;top:295px;}
+#t9_45{left:376px;top:311px;}
+#ta_45{left:30px;top:339px;}
+#tb_45{left:111px;top:339px;}
+#tc_45{left:30px;top:356px;}
+#td_45{left:30px;top:373px;}
+#te_45{left:30px;top:390px;}
+#tf_45{left:345px;top:390px;}
+#tg_45{left:384px;top:390px;}
+#th_45{left:30px;top:407px;}
+#ti_45{left:291px;top:407px;}
+#tj_45{left:331px;top:407px;}
+#tk_45{left:30px;top:424px;}
+#tl_45{left:175px;top:424px;}
+#tm_45{left:226px;top:424px;}
+#tn_45{left:263px;top:424px;}
+#to_45{left:270px;top:424px;}
+#tp_45{left:332px;top:424px;}
+#tq_45{left:30px;top:441px;}
+#tr_45{left:30px;top:473px;}
+#ts_45{left:85px;top:553px;}
+#tt_45{left:111px;top:569px;}
+#tu_45{left:352px;top:585px;}
+
+.s1_45{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold45;
+	color: rgb(31,26,23);
+}
+
+.s6_45{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic45;
+	color: rgb(31,26,23);
+}
+
+.s5_45{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: TGYLCE-ZapfHumnstBT45;
+	color: rgb(31,26,23);
+}
+
+.s4_45{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: XHGGEO-ZapfHumnstBT-Bold45;
+	color: rgb(31,26,23);
+}
+
+.s3_45{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: SMZIEA-ZapfHumnstBT-Italic45;
+	color: rgb(31,26,23);
+}
+
+.s2_45{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: RUPAOU-ZapfHumnstBT-BoldItali45;
+	color: rgb(31,26,23);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style type="text/css" >
+
+@font-face {
+	font-family: RUPAOU-ZapfHumnstBT-BoldItali45;
+	src :url("45/fonts/RUPAOU-ZapfHumnstBT-BoldItali.woff") format("woff");
+}
+
+@font-face {
+	font-family: SMZIEA-ZapfHumnstBT-Italic45;
+	src :url("45/fonts/SMZIEA-ZapfHumnstBT-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: XHGGEO-ZapfHumnstBT-Bold45;
+	src :url("45/fonts/XHGGEO-ZapfHumnstBT-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: TGYLCE-ZapfHumnstBT45;
+	src :url("45/fonts/TGYLCE-ZapfHumnstBT.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_45" class="t s1_45">FOR LESSENING ONE’S BURDEN</div>
+<div id="t2_45" class="t s1_45">A.</div>
+<div id="t3_45" class="t s2_45">Now has Allah lightened Your burden for </div>
+<div id="t4_45" class="t s2_45">He knows that there is weakness in you. </div>
+<div id="t5_45" class="t s2_45">So if there be of you, a hundred steadfast, they shall </div>
+<div id="t6_45" class="t s2_45">overcome two hundred and if there be of you a thousand </div>
+<div id="t7_45" class="t s2_45">they shall overcome two thousand by the permission of Allah. </div>
+<div id="t8_45" class="t s2_45">And Allah is with the steadfast. </div>
+<div id="t9_45" class="t s3_45">Al Anfal 66</div>
+<div id="ta_45" class="t s4_45">Significance: </div>
+<div id="tb_45" class="t s5_45">A person doing hard, menial work or carrying burdens </div>
+<div id="tc_45" class="t s5_45">on his back or doing any work that demands physical or mental </div>
+<div id="td_45" class="t s5_45">exertion — if he is desirous of lessening his burden and simplifying his </div>
+<div id="te_45" class="t s5_45">task — he should recite the above verse once after every </div>
+<div id="tf_45" class="t s6_45">Salaah</div>
+<div id="tg_45" class="t s5_45">for one </div>
+<div id="th_45" class="t s5_45">week. He should start on any Friday after Asr </div>
+<div id="ti_45" class="t s6_45">Salaah</div>
+<div id="tj_45" class="t s5_45">and continue till </div>
+<div id="tk_45" class="t s5_45">the following Friday after </div>
+<div id="tl_45" class="t s6_45">Jumu’ah</div>
+<div id="tm_45" class="t s6_45">Salaah</div>
+<div id="tn_45" class="t s5_45">. </div>
+<div id="to_45" class="t s6_45">Insha Allah</div>
+<div id="tp_45" class="t s5_45">, all his tasks will </div>
+<div id="tq_45" class="t s5_45">become easy.</div>
+<div id="tr_45" class="t s1_45">WHEN ENTERING A TOWN</div>
+<div id="ts_45" class="t s2_45">O My Lord cause me to land at a blessed place for </div>
+<div id="tt_45" class="t s2_45">You are the best of all who bring to land. </div>
+<div id="tu_45" class="t s3_45">Al Mu’minun 29</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg45Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg45"><object width="455" height="641" data="45/45.svg" type="image/svg+xml" id="pdf45" style="width:455px; height:641px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f45 = [['t1_45',872],['t3_45',930],['t4_45',908],['t5_45',1181],['t6_45',1302],['t7_45',1400],['t8_45',699],['t9_45',195],['tb_45',1253],['tc_45',1576],['td_45',1576],['te_45',1250],['tg_45',160],['th_45',1027],['tj_45',374],['tk_45',566],['to_45',247],['tp_45',371],['tq_45',304],['tr_45',727],['ts_45',1137],['tt_45',927],['tu_45',289]];
+function load45(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f45);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 31;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_45");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+<div id="brand" style="margin:0 auto; width:94px; padding:5px; clear: both;">
+<a href="http://www.idrsolutions.com/pdf-to-html5-svg-converter" target="_blank">
+<img title="PDF to HTML5 Conversion by IDRsolutions" alt="PDF to HTML5 Conversion by IDRsolutions" style="border:0;" src="icons/logo.png" />
+</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+</body>
+</html>
